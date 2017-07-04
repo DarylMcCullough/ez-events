@@ -6,6 +6,7 @@
 #
 default: &default
   adapter: postgresql
+  encoding: SQL_ASCII
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 

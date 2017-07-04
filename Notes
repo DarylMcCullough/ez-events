@@ -1,0 +1,39 @@
+add
+  encoding: SQL_ASCII
+
+to database.yml
+
+bundle update
+bundle install
+rails generate devise:install
+gem install railties
+gem install rails 5.1.1
+
+rvm install ruby-2.3.1
+
+rake db:create
+rake db:migrate
+rails generate devise:views User
+
+
+Turn on scoped_views in config/initializer/devise.rb
+
+view config.scoped_views = true
+
+add to config/initializers/setup_mail.rb:
+
+  if Rails.env.development? || Rails.env.production?
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+      address:        'smtp.sendgrid.net',
+      port:           '2525',
+      authentication: :plain,
+      user_name:      ENV['SENDGRID_USERNAME'],
+      password:       ENV['SENDGRID_PASSWORD'],
+      #domain:         'heroku.com',
+      domain:          "sendgrid.com",
+      enable_starttls_auto: true
+    }
+
+    ActionMailer::Base.default from: "stevendaryl3016@example.com"
+  end
