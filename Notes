@@ -37,3 +37,6 @@ add to config/initializers/setup_mail.rb:
 
     ActionMailer::Base.default from: "stevendaryl3016@example.com"
   end
+  
+  Credits:
+  
