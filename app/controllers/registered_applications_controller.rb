@@ -10,6 +10,7 @@ class RegisteredApplicationsController < ApplicationController
 
   # GET /registered_applications/1
   def show
+      @registered_application = RegisteredApplication.find(params[:id])
   end
 
   # GET /registered_applications/new
@@ -19,17 +20,17 @@ class RegisteredApplicationsController < ApplicationController
 
   # GET /registered_applications/1/edit
   def edit
+      @registered_application = RegisteredApplication.find(params[:id])
   end
 
   # POST /registered_applications
   def create
     params = registered_application_params
-    keys = params.keys
-    puts "........................................params: #{keys}"
+
     @registered_application = RegisteredApplication.new(params)
     @registered_application.user = current_user
 
-    if @registered_application.save
+    if @registered_application.save!
       redirect_to @registered_application, notice: 'Registered application was successfully created.'
     else
       render :new
@@ -38,7 +39,7 @@ class RegisteredApplicationsController < ApplicationController
 
   # PATCH/PUT /registered_applications/1
   def update
-    if @registered_application.update(registered_application_params)
+    if @registered_application.update!(registered_application_params)
       redirect_to @registered_application, notice: 'Registered application was successfully updated.'
     else
       render :edit
@@ -59,9 +60,6 @@ class RegisteredApplicationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def registered_application_params
-      puts ".........in registered, params: #{params.keys}"
-      app = params['registered_application']
-      puts app.inspect
       params.require(:registered_application).permit(:name, :url)
     end
 end

@@ -32,4 +32,5 @@
    gem 'faker'
    gem 'factory_girl_rails'
    gem 'pry-rails'
+   gem 'rails-controller-testing'
  end

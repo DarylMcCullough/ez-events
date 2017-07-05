@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :registered_application do
-    name "MyString"
-    url "MyString"
+    sequence(:name){|n| "app_#{n}" }
+    sequence(:url){|n| "http://example.com/page_#{n}.html" }
+    user nil
   end
 end
