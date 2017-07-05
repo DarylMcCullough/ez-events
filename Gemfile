@@ -33,4 +33,5 @@
    gem 'factory_girl_rails'
    gem 'pry-rails'
    gem 'rails-controller-testing'
+   gem 'simplecov', :require => false, :group => :test
  end

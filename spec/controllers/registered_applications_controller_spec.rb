@@ -79,8 +79,6 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
       it "increases the number of registered_applictions by 1" do
         app_name = "app_1"
         app_url = "http://app_1.com"
-
-        puts "number of apps: #{RegisteredApplication.count}"
         expect{ post :create, params: {registered_application: { name: app_name, url: app_url} } }.to change(RegisteredApplication,:count).by(1)
       end
 
