@@ -101,9 +101,26 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 150%;
+    border: none;
 }
 
 .my-link a:hover {
+    color: rgb(131, 252, 140);
+    background-color: rgb(70, 186, 33);
+}
+
+input.my-link.btn-primary {
+    color: rgb(70, 186, 33);
+    text-decoration: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 150%;
+    background-color: transparent;
+    border:none;
+}
+
+input.my-link.btn-primary:hover {
     color: rgb(131, 252, 140);
     background-color: rgb(70, 186, 33);
 }
@@ -117,4 +134,19 @@ footer {
 
 .spacer {
     position: static;
+}
+
+.registered-applications {
+    min-height: 150px;
+}
+
+.create-ra hr {
+    width:100%;
+    height:1px;
+    background: #fff;
+}
+
+.window-title {
+    font-size: 180%;
+    margin-bottom:30px;
 }

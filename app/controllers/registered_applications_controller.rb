@@ -2,9 +2,10 @@ class RegisteredApplicationsController < ApplicationController
   before_action :set_registered_application, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+
   # GET /registered_applications
   def index
-    @registered_applications = RegisteredApplication.all
+    @registered_applications = current_user.registered_applications
   end
 
   # GET /registered_applications/1
@@ -22,7 +23,11 @@ class RegisteredApplicationsController < ApplicationController
 
   # POST /registered_applications
   def create
-    @registered_application = RegisteredApplication.new(registered_application_params)
+    params = registered_application_params
+    keys = params.keys
+    puts "........................................params: #{keys}"
+    @registered_application = RegisteredApplication.new(params)
+    @registered_application.user = current_user
 
     if @registered_application.save
       redirect_to @registered_application, notice: 'Registered application was successfully created.'
@@ -54,6 +59,9 @@ class RegisteredApplicationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def registered_application_params
+      puts ".........in registered, params: #{params.keys}"
+      app = params['registered_application']
+      puts app.inspect
       params.require(:registered_application).permit(:name, :url)
     end
 end

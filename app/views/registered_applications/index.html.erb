@@ -1,30 +1,39 @@
 <div class="container main-content">
 
-<h1>Registered Applications</h1>
+  <h1>Registered Applications</h1>
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="registered-applications">
+    <% if current_user.registered_applications.count > 0 %>
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Url</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-  <tbody>
-    <% @registered_applications.each do |registered_application| %>
-      <tr class="my-link">
-        <td><%= registered_application.name %></td>
-        <td><%= registered_application.url %></td>
-        <td><%= link_to 'Show', registered_application %>
-        <%= link_to 'Edit', edit_registered_application_path(registered_application) %>
-        <%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tbody>
+          <% @registered_applications.each do |registered_application| %>
+            <tr class="my-link">
+              <td><%= registered_application.name %></td>
+              <td><%= registered_application.url %></td>
+              <td><%= link_to 'Show', registered_application %>
+                <%= link_to 'Edit', edit_registered_application_path(registered_application) %>
+                <%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      You currently have no registered applications.
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <br>
 
-<span class="my-link"><%= link_to 'New Registered Application', new_registered_application_path %></span>
+  <div class="create-ra">
+    <hr/>
+    <span class="my-link"><%= link_to 'New Registered Application', new_registered_application_path %></span>
+  </div>
 </div>
