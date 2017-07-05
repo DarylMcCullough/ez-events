@@ -16,13 +16,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-        
                     <li>
-                        <a class="navbar-brand" href="#">Go to EZ Events</a>
-                    </li>
-                    <li>
-                        <%= link_to "About", root_path, class: 'navbar-link'  %></li>
+                        <%= link_to "About EZ Events", root_path, class: 'navbar-link navbar-brand'  %></li>
                     </li> 
+                    <li>
+                        <%= link_to "Registered Applications", registered_applications_path, class: "navbar-link" %>
+                    </li>
+
                     <li>
                         <a href="#">Contact</a>
                     </li>
@@ -41,7 +41,22 @@
         </div>
         <!-- /.container -->
     </nav>
+        <div class="messages">
+    
+        <% if flash[:notice] %>
+           <div class="alert alert-success">
+             <button type="button" class="close" data-dismiss="alert">&times;</button>
+             <%= flash[:notice] %>
+           </div>
+         <% elsif flash[:alert] %>
+           <div class="alert alert-warning">
+             <button type="button" class="close" data-dismiss="alert">&times;</button>
+             <%= flash[:alert] %>
+           </div>
+         <% end %>
+    </div>
+    <div class="spacer"></div>
+    
      <%= yield %>
-
   </body>
 </html>

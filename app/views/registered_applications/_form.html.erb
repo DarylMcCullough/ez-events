@@ -1,0 +1,35 @@
+<%= form_with(model: registered_application, local: true) do |form| %>
+  <% if registered_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(registered_application.errors.count, "error") %> prohibited this registered_application from being saved:</h2>
+
+      <ul>
+      <% registered_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <div class="form-group row">
+    <%= form.label :name, class: "col-sm-1 col-form-label" %>
+    <div class="col-sm-5">
+      <%= form.text_field :name, id: :registered_application_name, class: "form-control" %>
+    </div>
+  </div>
+    
+  <div class="form-group row">
+    <%= form.label :url, class: "col-sm-1 col-form-label" %>
+    <div class="col-sm-5">
+      <%= form.text_field :url, id: :registered_application_url, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary my-link"%>
+  </div>
+<% end %>
+
+<hr/>

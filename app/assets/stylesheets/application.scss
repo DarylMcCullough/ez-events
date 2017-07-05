@@ -59,7 +59,7 @@ footer {
 }
 
 .main-content {
- padding-top: 25px;
+ padding-top: 100px;
 }
 
 .fill#developer {
@@ -72,20 +72,6 @@ footer {
 
 .fill#graph {
     background-image: url('/assets/graph.jpg')
-}
-
-#signup a {
-    color: rgb(70, 186, 33);
-    
-}
-
-#signup a:hover {
-    /* background-color: rgb(30, 78, 14); */
-    text-decoration: none;
-    color: rgb(131, 252, 140);
-    font-weight: 600;
-    /* text-shadow: -1px 0 rgb(30, 78, 14), 0 1px rgb(30, 78, 14), 1px 0 rgb(30, 78, 14), 0 -1px rgb(30, 78, 14); */
-    
 }
 
 .welcome-content {
@@ -106,4 +92,61 @@ footer {
 .navbar-inverse .navbar-nav > li > a:hover {
      background-color: rgb(2, 111, 11);
      color: rgb(131, 252, 140);
+}
+
+.my-link a {
+    color: rgb(70, 186, 33);
+    text-decoration: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 150%;
+    border: none;
+}
+
+.my-link a:hover {
+    color: rgb(131, 252, 140);
+    background-color: rgb(70, 186, 33);
+}
+
+input.my-link.btn-primary {
+    color: rgb(70, 186, 33);
+    text-decoration: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 150%;
+    background-color: transparent;
+    border:none;
+}
+
+input.my-link.btn-primary:hover {
+    color: rgb(131, 252, 140);
+    background-color: rgb(70, 186, 33);
+}
+
+.messages {
+    height: 55px;
+    position: absolute;
+    top: 45px;
+    width: 100%;
+}
+
+.spacer {
+    position: static;
+}
+
+.registered-applications {
+    min-height: 150px;
+}
+
+.create-ra hr {
+    width:100%;
+    height:1px;
+    background: #fff;
+}
+
+.window-title {
+    font-size: 180%;
+    margin-bottom:30px;
 }
