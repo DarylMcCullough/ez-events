@@ -1,5 +1,6 @@
 class RegisteredApplicationsController < ApplicationController
   before_action :set_registered_application, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /registered_applications
   def index

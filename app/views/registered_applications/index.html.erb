@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+<div class="container main-content">
 
 <h1>Registered Applications</h1>
 
-<table>
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,12 +13,12 @@
 
   <tbody>
     <% @registered_applications.each do |registered_application| %>
-      <tr>
+      <tr class="my-link">
         <td><%= registered_application.name %></td>
         <td><%= registered_application.url %></td>
-        <td><%= link_to 'Show', registered_application %></td>
-        <td><%= link_to 'Edit', edit_registered_application_path(registered_application) %></td>
-        <td><%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', registered_application %>
+        <%= link_to 'Edit', edit_registered_application_path(registered_application) %>
+        <%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Registered Application', new_registered_application_path %>
+<span class="my-link"><%= link_to 'New Registered Application', new_registered_application_path %></span>
+</div>
