@@ -18,8 +18,8 @@
             <tr class="my-link">
               <td><%= registered_application.name %></td>
               <td><%= registered_application.url %></td>
-              <td><%= link_to 'Show', registered_application %>
-                <%= link_to 'Edit', edit_registered_application_path(registered_application) %>
+              <td><%= link_to 'Show', registered_application %> |
+                <%= link_to 'Edit', edit_registered_application_path(registered_application) %> |
                 <%= link_to 'Destroy', registered_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
