@@ -1,0 +1,9 @@
+foo=$(sudo service postgresql status)
+echo $foo
+
+if [[ $foo == *"down"* ]]; then
+  sudo service postgresql start
+  sleep .5
+fi
+
+rails s -p $PORT -b $IP

@@ -21,3 +21,11 @@
 /yarn-error.log
 
 .byebug_history
+
+/tmp
+
+# Ignore .env
+/.env
+
+# Ignore application.yml
+config/application.yml
