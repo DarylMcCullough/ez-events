@@ -38,5 +38,8 @@ add to config/initializers/setup_mail.rb:
     ActionMailer::Base.default from: "stevendaryl3016@example.com"
   end
   
-  Credits:
+In app/models/user.rb, choose attributes 
+
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
   
