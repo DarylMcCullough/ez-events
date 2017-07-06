@@ -62,3 +62,15 @@ At bottom, add
   
   UPdate heroku:
   wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+  
+  
+heroku login
+heroku create ez-events
+git push heroku master
+heroku run rake db:migrate
+
+Go to heroku
+Go to Settings/configuration variables
+Set SENDGRID_PASSWORD
+Set SENDGRID_USERNAME
+
