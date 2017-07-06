@@ -35,6 +35,8 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
         get :show, params: {id: my_app.id}
         expect(assigns(:registered_application)).to eq(my_app)
       end
+      
+      it 
     end
   
     describe "GET new" do
