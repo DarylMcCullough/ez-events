@@ -5,4 +5,5 @@ class RegisteredApplication < ApplicationRecord
     validates_uniqueness_of :name
     
     belongs_to :user
+    has_many :events
 end
