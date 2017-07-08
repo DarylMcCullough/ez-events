@@ -15,8 +15,10 @@
     end
     
     5.times do
-        app_name = Faker::App.unique.name
-        puts "new app name: #{app_name}"
+        app_name = ""
+        until app_name.length >= 5
+            app_name = Faker::App.unique.name
+        end
         app = RegisteredApplication.new(
             name: app_name,
             url: Faker::Internet.unique.url,
@@ -30,9 +32,12 @@
     
     event_names = Array.new
     10.times do
-       name = Faker::Lorem.unique.word
-       event_names.push(name)
-   end
+        name = ""
+        until name.length >= 5
+            name = Faker::Lorem.unique.word
+        end
+        event_names.push(name)
+    end
     
     150.times do
         name = event_names.sample
