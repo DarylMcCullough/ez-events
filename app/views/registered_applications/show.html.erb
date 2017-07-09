@@ -10,6 +10,28 @@
   <%= @registered_application.url %>
 </p>
 
+<% if @events.keys.length > 0 %>
+
+  <table class="table">
+    <thead>
+        <tr>
+          <th>Event type</th>
+          <th>Event count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.keys.each do |key| %>
+          <tr>
+            <td><%= key %></td>
+            <td><%= @events[key].length %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+<% else %>
+  <h4>No events published</h4>
+<% end %>
+
   <div class="my-link">
     <%= link_to 'Edit', edit_registered_application_path(@registered_application) %> |
     <%= link_to 'Back', registered_applications_path %>
