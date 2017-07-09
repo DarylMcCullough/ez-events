@@ -4,6 +4,7 @@
  gem 'rails', '5.1.2'
  gem 'devise'
  gem 'pg'
+ gem 'rack-cors', :require => 'rack/cors'
 
  group :production do
    gem 'rails_12factor'
