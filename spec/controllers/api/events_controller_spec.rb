@@ -16,13 +16,13 @@ RSpec.describe API::EventsController, type: :controller do
     #  post :create, params: {event: { name: "About Page Load" }}
     #end
     
-    #describe "POST create" do
-    #  it 'Returns the response CORS headers' do
-    #    @request.env['HTTP_ORIGIN'] = my_app.url
-    #    post :create, params: { event: { name: "About Page Load"}}
-    #    expect(response.headers['Access-Control-Allow-Origin']).to eq('*')
-    #  end
-    #end
+    describe "POST create" do
+      it 'Returns the response CORS headers' do
+        @request.env['HTTP_ORIGIN'] = my_app.url
+        post :create, params: { event: { name: "About Page Load"}}
+        expect(response.headers['Access-Control-Allow-Origin']).to eq('*')
+      end
+    end
     
   end
 
