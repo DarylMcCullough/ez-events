@@ -27,6 +27,13 @@ class RegisteredApplicationsController < ApplicationController
   # POST /registered_applications
   def create
     params = registered_application_params
+    
+    url = params['url']
+    
+    if url.end_with? "/"
+      url = url[0..-2]
+      params['url'] = url
+    end
 
     @registered_application = RegisteredApplication.new(params)
     @registered_application.user = current_user
