@@ -11,16 +11,18 @@ RSpec.describe API::EventsController, type: :controller do
 
   context "registered application" do
     
-    #before do
-    #  controller.request.env['HTTP_ORIGIN'] = my_app.url
-    #  post :create, params: {event: { name: "About Page Load" }}
-    #end
+    before do
+      controller.request.env['HTTP_ORIGIN'] = my_app.url
+    end
     
     describe "POST create" do
       it 'Returns the response CORS headers' do
-        @request.env['HTTP_ORIGIN'] = my_app.url
         post :create, params: { event: { name: "About Page Load"}}
         expect(response.headers['Access-Control-Allow-Origin']).to eq('*')
+      end
+      
+      it 'Increases the number of events by 1' do
+        expect{ post :create, params: {event: { name: "About Page Load"}}}.to change(Event,:count).by(1)
       end
     end
     
