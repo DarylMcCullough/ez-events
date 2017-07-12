@@ -74,3 +74,6 @@ Go to Settings/configuration variables
 Set SENDGRID_PASSWORD
 Set SENDGRID_USERNAME
 
+Set up CORS
+https://www.youtube.com/watch?v=Sv8442cL_q4
+https://github.com/cyu/rack-cors
