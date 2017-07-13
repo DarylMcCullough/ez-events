@@ -24,6 +24,8 @@
  gem 'bootstrap-sass'
  gem 'bcrypt'
  gem 'figaro', '1.0'
+ gem "chartkick"
+ gem 'groupdate'
 
  group :development, :test do
    gem 'byebug'

@@ -12,7 +12,7 @@
 
 <% if @events.keys.length > 0 %>
 
-  <table class="table">
+  <table class="table" id="events-table">
     <thead>
         <tr>
           <th>Event type</th>
@@ -28,6 +28,23 @@
         <% end %>
       </tbody>
   </table>
+
+   <%= pie_chart @registered_application.events.group(:name).count, id: "events-pie-chart" %>
+
+    <%= line_chart @registered_application.events.group_by_day(:created_at).count, id: "events-line-chart" %>
+    
+    <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active" id="table-option">
+    <input type="radio" name="options" autocomplete="off" checked > View as table
+  </label>
+  <label class="btn btn-primary" id="chart-option">
+    <input type="radio" name="options"  autocomplete="off" > View as pie chart
+  </label>
+  <label class="btn btn-primary" id="graph-option">
+    <input type="radio" name="options"  autocomplete="off"> View as graph
+  </label>
+</div>
+
 <% else %>
   <h4>No events published</h4>
 <% end %>
