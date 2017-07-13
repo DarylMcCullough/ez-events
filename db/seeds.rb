@@ -46,6 +46,7 @@
             name: name,
             registered_application: app
         )
+        event.created_at = Faker::Time.between(10.days.ago, Date.today, :all)
         event.save!
     end
     

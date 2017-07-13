@@ -150,3 +150,12 @@ input.my-link.btn-primary:hover {
     font-size: 180%;
     margin-bottom:30px;
 }
+
+.btn.btn-primary {
+     background-color:  rgb(70, 186, 33);
+}
+
+.btn.btn-primary.active {
+     background-color: rgb(2, 111, 11);
+     color: rgb(131, 252, 140);
+}

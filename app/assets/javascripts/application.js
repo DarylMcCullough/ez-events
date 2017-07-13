@@ -14,12 +14,37 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require Chart.bundle
+//= require chartkick
 
-$(document).on('turbolinks:load', function() {
+jQuery(document).on('turbolinks:load', function() {
 
   $('.carousel').carousel({
              interval: 3000
-         })
+         });
+         
+
+  $("#table-option").click(function(){
+    $("#events-table").show();
+    $("#events-pie-chart").hide();
+    $("#events-line-chart").hide();
+});
+
+  $("#chart-option").click(function(){
+    $("#events-table").hide();
+    $("#events-pie-chart").show();
+    $("#events-line-chart").hide();
+});
+
+  $("#graph-option").click(function(){
+    $("#events-table").hide();
+    $("#events-pie-chart").hide();
+    $("#events-line-chart").show();
+});
+
+    $("#events-table").show();
+    $("#events-pie-chart").hide();
+    $("#events-line-chart").hide();
 
 });
 
